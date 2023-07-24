@@ -1,0 +1,90 @@
+﻿@using SamProject.Models
+@model SamProject.Models.SanalPosModel
+
+@{
+    ViewBag.Title = "İş Bankası Sanal Pos Test";
+}
+
+
+    @using (Html.BeginForm("SanalPos", "SanalPos", FormMethod.Post, new { action = "https://entegrasyon.asseco-see.com.tr/fim/est3Dgate" }))
+    {
+    
+
+        <div class="text-center form-group mx-auto col-4">
+    <h2>İş Bankası Sanal Pos Test</h2>
+
+    
+        <div class="text-center form-group">
+            <label>clientid</label>
+            <input class="form-control" style="padding: " name="clientid" value="@Model.ClientId" />
+        </div>
+        <div class="text-center form-group">
+            <label>storetype</label>
+            <input class="form-control" name="storetype" value="3d_pay_hosting" />
+            <small>3d_pay, 3d_pay_hosting</small>
+        </div>
+        <div>
+            <label>hash</label>
+            <input class="form-control" name="hash" value="@Model.Hash" />
+        </div>
+        <div>
+            <label>islemtipi</label>
+            <input class="form-control" name="islemtipi" value="@Model.Islemtipi" />
+        </div>
+        <div>
+            <label>amount</label>
+            <input class="form-control" name="amount" value="@Model.Amount" />
+        </div>
+        <div>
+            <label>currency</label>
+            <input class="form-control" name="currency" value="949" />
+            <small><a href="https://tr.wikipedia.org/wiki/ISO_4217">https://tr.wikipedia.org/wiki/ISO_4217</a></small>
+        </div>
+        <div>
+            <label>oid</label>
+            <input class="form-control" name="oid" value="@Model.Oid" />
+        </div>
+        <div>
+            <label>okUrl</label>
+            <input class="form-control" name="okUrl" value="@Model.OkUrl" />
+        </div>
+        <div>
+            <label>failUrl</label>
+            <input class="form-control" name="failUrl" value="@Model.FailUrl" />
+        </div>
+        <div>
+            <label>lang</label>
+            <input class="form-control" name="lang" value="tr" />
+        </div>
+        <div>
+            <label>taksit</label>
+            <input class="form-control" name="taksit" value="@Model.Taksit" />
+        </div>
+        <div>
+            <label>rnd</label>
+            <input class="form-control" name="rnd" value="@Model.Rnd" />
+        </div>
+        <div>
+            <label>pan</label>
+            <input class="form-control" name="pan" value="4508034508034509" />
+            <small>3d_pay_hosting için boş gönderilebilir.</small>
+        </div>
+        <div>
+            <label>cv2</label>
+            <input class="form-control" name="cv2" value="000" />
+            <small>3d_pay_hosting için boş gönderilebilir.</small>
+        </div>
+        <div>
+            <label>Ecom_Payment_Card_ExpDate_Year</label>
+            <input class="form-control" name="Ecom_Payment_Card_ExpDate_Year" value="26" />
+            <small>3d_pay_hosting için boş gönderilebilir.</small>
+        </div>
+        <div>
+            <label>Ecom_Payment_Card_ExpDate_Month</label>
+            <input class="form-control" name="Ecom_Payment_Card_ExpDate_Month" value="12" />
+            <small>3d_pay_hosting için boş gönderilebilir.</small>
+        </div>
+        <button class="btn btn-primary" type="submit">Test</button>
+        </div>
+        
+    }
